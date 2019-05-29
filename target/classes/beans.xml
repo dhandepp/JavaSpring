@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="helloWorld" class="SpringCore.HelloWorld">
+    </bean>
+
+    <bean id="helloStaticClass" class="SpringCore.HelloStaticClass" factory-method="createInstance">
+    </bean>
+
+    <!--  Constructor based bean initialization , different ways, name , sequence, index -->
+    <bean id="helloConstructInit" class="SpringCore.HelloWorldBeanInit">
+        <constructor-arg index="0" value="3" />
+        <constructor-arg index="1" value="ABC" />
+        <property name="hello" ref="helloWorld" />
+        <!--
+        <constructor-arg type="int" value="2" />
+        <constructor-arg name="ab" value="2" />
+        -->
+    </bean>
+
+    <!-- BeanCurrentlyInCreationException for circular dependency
+    - Bean initialization sequence, first all depenedent beans are fully initialized and then main bean
+    -->
+
+</beans>

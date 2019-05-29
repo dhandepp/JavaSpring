@@ -1,0 +1,65 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="helloWorld" class="SpringCore.HelloWorld">
+    </bean>
+
+    <bean id="helloStaticClass" class="SpringCore.HelloStaticClass" factory-method="createInstance">
+    </bean>
+
+    <!--  Constructor based bean initialization , different ways, name , sequence, index -->
+    <bean id="helloConstructInit" class="SpringCore.HelloWorldBeanInit">
+        <constructor-arg index="0" value="3" />
+        <constructor-arg index="1" value="ABC" />
+        <property name="hello" ref="helloWorld" />
+        <!--
+        <constructor-arg type="int" value="2" />
+        <constructor-arg name="ab" value="2" />
+        -->
+    </bean>
+
+    <!--                         BeanCurrentlyInCreationException for circular dependency
+    - Bean initialization sequence, first all depenedent beans are fully initialized and then main bean
+    -->
+
+    <!--                                        Collections
+    <beans>
+    <bean id="something" class="x.y.SomeClass">
+        <property name="accounts">
+            <map>
+                <entry key="one" value="9.99"/>
+                <entry key="two" value="2.75"/>
+                <entry key="six" value="3.99"/>
+            </map>
+        <list>
+            <value>a list element followed by a reference</value>
+            <ref bean="myDataSource" />
+        </list>
+        <set>
+            <value>just some string</value>
+            <ref bean="myDataSource" />
+        </set>
+        <props>
+            <prop key="administrator">administrator@example.org</prop>
+            <prop key="support">support@example.org</prop>
+            <prop key="development">development@example.org</prop>
+        </props>
+        </property>
+    </bean>
+</beans>
+-->
+
+    <!--            depends-on=','  lazy-init="true"
+        <bean id="lazy" class="com.something.ExpensiveToCreateBean" lazy-init="true"/>
+<bean name="not.lazy" class="com.something.AnotherBean"/>
+
+        <beans default-lazy-init="true" >  for all beans
+
+    depends-on is like ref, creates inner beans first, ex., static initializer
+    lazy init is like on demand creation of beans
+
+</beans>
