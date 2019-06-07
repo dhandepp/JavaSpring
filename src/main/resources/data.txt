@@ -1,0 +1,163 @@
+ <!--  Constructor based bean initialization , different ways, name , sequence, index -->
+    <bean id="helloConstructInit" class="SpringCore.HelloWorldBeanInit">
+        <constructor-arg index="0" value="3" />
+        <property name="hello" ref="helloWorld" />
+        <!--
+        <constructor-arg type="int" value="2" />
+        <constructor-arg name="ab" value="2" />
+        <constructor-arg index="1" value="ABC" />
+        <alias name="existing-name" alias="new name" />
+        -->
+    </bean>
+      <!--                             Autowire
+                        <bean name="fa" class="" autowire="byName" (looks for instance var name and finds bean)
+                                , "byType" (looks for type, works if only one type is present) ,,
+                                    "constructor" , uses constructor, only bean per type
+
+
+        -->
+
+    <!--                         BeanCurrentlyInCreationException for circular dependency
+    - Bean initialization sequence, first all depenedent beans are fully initialized and then main bean
+    -->
+
+    <!--                                        Collections
+    <beans>
+    <bean id="something" class="x.y.SomeClass">
+        <property name="accounts">
+            <map>
+                <entry key="one" value="9.99"/>
+                <entry key="two" value="2.75"/>
+                <entry key="six" value="3.99"/>
+            </map>
+        <list>
+            <value>a list element followed by a reference</value>
+            <ref bean="myDataSource" />
+        </list>
+        <set>
+            <value>just some string</value>
+            <ref bean="myDataSource" />
+        </set>
+        <props>
+            <prop key="administrator">administrator@example.org</prop>
+            <prop key="support">support@example.org</prop>
+            <prop key="development">development@example.org</prop>
+        </props>
+        </property>
+    </bean>
+</beans>
+-->
+
+    <!--            depends-on=','  lazy-init="true"
+        <bean id="lazy" class="com.something.ExpensiveToCreateBean" lazy-init="true"/>
+<bean name="not.lazy" class="com.something.AnotherBean"/>
+
+        <beans default-lazy-init="true" >  for all beans
+
+    depends-on is like ref, creates inner beans first, ex., static initializer
+    lazy init is like on demand creation of beans
+
+</beans>
+
+
+                                  Bean Scopes
+                                   <bean scope = "prototype" >
+    - Singleton, by default or on bean level, single instance is supplied to all refs or getBean
+    - prototype, a new instance is handed over every time ref is made or getBean,
+      just like new operator. Spring doesn't care destruction phase. Client need to take care of releasing resources
+      from prototype bean. or use post constructors of spring
+        - prototype dependency on singleton bean.....
+    - request, session, application, websocket (web), for ioc, unknown bean exception
+    - request scope is for http request. @RequestScope annotation
+    - session , for HTTP Session, @SessionScope
+    - application, for entire ServletContext, similar to singleton, but differes, not for ApplicationContext could be several, and
+        available for ServletContext attribute, @ApplicationScope
+
+
+                                Scoped Beans as Dependencies (https://docs.spring.io/spring/docs/5.2.0.M2/spring-framework-reference/core.html#beans-factory-scopes-other-injection)
+
+                                <bean id="userPreferences" class="com.something.UserPreferences" scope="session">
+                                           <aop:scoped-proxy/>
+                                </bean>
+                                <bean id="userService" class="com.something.SimpleUserService">
+                                <property name="userPreferences" ref="userPreferences"/>
+                                </bean>
+             - Spring creates a proxy object and injects to parent bean, when parent bean invokes public interfaces of
+                proxy object, Spring pulls out the dependent or less restricted scope object and The proxy then fetches the real UserPreferences object from (in this case) the HTTP Session and delegates the method invocation onto the retrieved real UserPreferences object.
+
+
+
+                                Bean Lifecycle Callbacks
+                        1- @PostConstruct, @PreDestroy annotations on methods, JSR250, first preference
+                        2- Spring interfaces, InitializingBean->afterPropertiesSet() , DisposableBean->destroy()
+                        3- init-method="", destroy-method="", or on <beans> level, default-init-method, default-destroy-method
+
+
+                            Startup shutdown callback
+                        Lifecycle interface, start(), stop() , isRunning(),, when ApplicationContext has received such signals
+                        AbstractApplicationContext , context.registerShutdownHook(),, registry is needed
+
+
+
+                            Bean Definition Inheritance, child gets all properties of parent
+                            <bean id="parent" abstract="true">
+                            <bean id="child" parent="parent">
+
+
+                         BeanPostProcessor- I- during the initialization lifecycle of a bean, expect bean object to be returned
+                          Object postProcessBeforeInitialization(Object,String) - before initialization
+                          Object postProcessAfterInitialization(Object,String)  - after initialization,
+                          This would be in a centralized class where all beans initialization would halt and continue,
+                          it will be called for every bean
+
+                          , BeanFactoryPostProcessor, I , when beanfactory is initialized
+
+
+///////////////////////////////////////     Annotations      ////////////////////////////////////////////////////
+
+    <context:annotation-config/> (can be skipped for specifying bean postprocessors
+    <context:component-scan base-package="org.example"/>    ,,, above is not needed
+
+                @Resource, JSR250, DI using name, like autowire, name="" attribute, @PostConstruct @PreDestroy
+
+                @Component Generic- @Repository @Service @Controller specific, no xml config required, multiple xml config possible, not with
+                    annotations
+
+                @Configuration
+                    @ComponentScan(basePackages = "org.example")
+                    public class AppConfig  {
+                                @Bean
+                                 @Scope("prototype")
+                                public MyService myService() {
+                                    return new MyServiceImpl();         -returns object of MyServiceImpl,
+                                }
+                              }
+
+                Same as
+                            <beans>
+                                  <bean id="myService" class="com.acme.services.MyServiceImpl"/>
+                                </beans>
+
+
+                 @Required, only validation, not wiring,
+                 RequiredBeanPostProcessor would throw exception, if config is missing, add bean in xml for postprocessing
+
+                @Autowired(required = false), default by type, so if more than one <beans> of same class, throws exception
+                type->name
+
+                @Qualifier, works like a tag, @Qualifier("circleRelated") ,, and in <bean> <qualifier value="circleRelated" />
+                    sso despite multiple beans of same type, without changing bean name, we still can autowire
+
+                 @Bean , method level annotation, analogous to <bean> and provides exact same features as xml does.
+                     The @Bean annotation is used to indicate that a method instantiates, configures, and
+                     initializes a new object to be managed by the Spring IoC container
+                 @Primary, configures a bean so that it will be autowired among others
+
+                 @RestController comprised of @Controller and @ResponseBody
+
+
+
+                    REsources
+                    Resource template = ctx.getResource("some/resource/path/myTemplate.txt");
+
+

@@ -7,8 +7,8 @@ public class HelloStaticClass {
     public static HelloStaticClass createInstance(){
         return staticClass;
     }
-
+/*
     public void hello(){
         System.out.println("Hello world");
-    }
+    }*/
 }
