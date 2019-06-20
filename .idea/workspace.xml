@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="403f6eda-87ad-4ac1-89fd-0ea6fd13c298" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/adapter/EnemyAIAttacker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/adapter/EnemyAttacker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/adapter/EnemyAttackerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/adapter/EnemyAttackerIncompatibles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/adapter/EnemyTank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/adapter/TestAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/decorator/Mozzarella.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/decorator/Pizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/decorator/PlainPizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/decorator/TestDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/decorator/TomatoSauce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpattern/decorator/ToppingDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/multithreading/executors/CallableTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/multithreading/executors/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/multithreading/executors/TestExecutorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/java8/lambda/FunctionableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/java8/lambda/MyFunctionalable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/java8/lambda/TestPureLambdas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Collections/CollectionsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/CollectionsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Collections/CollectionsApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Collections/CollectionsApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/java8/DefaultMethodInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java8/DefaultMethodInterface.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,13 +20,57 @@
     <favorites_list name="CoreJava" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/java8/lambda/MyFunctionalable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/java8/LambdaFirst.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/java8/lambda/TestPureLambdas.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+              <folding>
+                <element signature="e#395#396#0" expanded="true" />
+                <element signature="e#432#433#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/java8/lambda/FunctionableTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -59,12 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/SpringCore/HelloWorldConstructorInit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SpringCore/HelloWorldBeanInit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SpringCore/MixedScopeBeans.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SpringCore/AnnotationConfigDemo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SpringCore/validation/Person.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SpringCore/validation/PersonValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpringCore/HelloWorld.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpringCore/aop/HelloWorldAspect.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpringCore/CoreApp.java" />
@@ -110,6 +135,12 @@
         <option value="$PROJECT_DIR$/src/main/java/multithreading/executors/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/multithreading/executors/CallableTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/multithreading/executors/TestExecutorService.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/java8/lamda/MyFunctionalable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/java8/TestPureLambdas.java" />
+        <option value="$PROJECT_DIR$/src/main/java/java8/lamda/TestPureLambdas.java" />
+        <option value="$PROJECT_DIR$/src/main/java/java8/lambda/FunctionableTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/java8/lambda/TestPureLambdas.java" />
       </list>
     </option>
   </component>
@@ -164,7 +195,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="multithreading" type="462c0819:PsiDirectoryNode" />
+              <item name="java8" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaSpring" type="b2602c69:ProjectViewProjectNode" />
@@ -172,15 +203,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="multithreading" type="462c0819:PsiDirectoryNode" />
-              <item name="executors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSpring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSpring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java8" type="462c0819:PsiDirectoryNode" />
+              <item name="lambda" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -198,14 +222,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gs-1444\IdeaProjects\JavaSpring\src\main\resources" />
+      <recent name="C:\Users\gs-1444\IdeaProjects\JavaSpring\src\main" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\gs-1444\IdeaProjects\JavaSpring" />
       <recent name="C:\Users\dhand\IdeaProjects\CoreJava\src\main\java\datastructures" />
       <recent name="C:\Users\dhand\IdeaProjects\CoreJava\src\main\java\multithreading" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gs-1444\IdeaProjects\JavaSpring\src\main\resources" />
-      <recent name="C:\Users\gs-1444\IdeaProjects\JavaSpring\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -222,7 +246,7 @@
   </component>
   <component name="RunManager">
     <configuration name="SynchronizedKeyword" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="multithreading.executors.TestExecutorService" />
+      <option name="MAIN_CLASS_NAME" value="java8.lambda.TestPureLambdas" />
       <module name="JavaSpring" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -243,7 +267,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976415" visible="true" weight="0.2375189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -251,8 +276,8 @@
       <window_info id="Favorites" order="3" sideWeight="0.5023585" side_tool="true" weight="0.19261745" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29411766" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3611111" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.45424837" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.625817" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -268,44 +293,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpringCore/validation/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <element signature="e#125#126#0" expanded="true" />
-            <element signature="e#151#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpringCore/validation/PersonValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="115" selection-start-line="17" selection-start-column="115" selection-end-line="17" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpringCore/HelloWorldBeanInit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding>
-            <element signature="e#282#283#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/designpattern/strategy/Bird.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -454,38 +441,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/java8/DefaultMethodInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="e#53#54#0" expanded="true" />
-            <element signature="e#98#99#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/Predicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/stream/Stream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="171" column="36" selection-start-line="171" selection-start-column="36" selection-end-line="171" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/java8/LambdaFirst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,6 +698,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/Predicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1192">
+          <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/java8/LambdaFirst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/java8/lambda/MyFunctionalable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/java8/DefaultMethodInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/java8/lambda/FunctionableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/java8/lambda/TestPureLambdas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding>
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
