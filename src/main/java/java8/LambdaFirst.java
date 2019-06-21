@@ -20,12 +20,18 @@ public class LambdaFirst {
         values.forEach(value -> System.out.println(value));
         values.forEach(System.out::println);
 
-        
+
         // Find total of doubled element
         System.out.println(values.stream()
                 .map(e -> e * 2)
                 .reduce(0, (c, e) -> c + e)
         );
+
+        // example,
+        int total = values.stream()
+                .filter(e -> e % 2 == 0)
+                .map(e -> e * 2)
+                .reduce(0, (carry, next) -> carry + next);
 
 
         // Calling a function by passing lambda function

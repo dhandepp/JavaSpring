@@ -8,6 +8,10 @@ public class TestPureLambdas {
         MyFunctionalable function = () -> System.out.println("Hello");
        // function.apply();
 
+       // Thread th = new Thread(()->System.out.println("gfo"));
+        Thread th = new Thread(System.out::println);
+        th.start();
+
         System.out.println(doSome().isOdd(3));
     }
 
