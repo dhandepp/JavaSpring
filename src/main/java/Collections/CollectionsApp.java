@@ -32,8 +32,8 @@ public class CollectionsApp {
 
         System.out.println("Before sort method");
         System.out.println(employeeList);
-     /*   Collections.sort(employeeList);
-        System.out.println("After comparable method");
+        Collections.sort(employeeList);
+      /*  System.out.println("After comparable method");
         System.out.println(employeeList);*/
 
         // Try with comparator
