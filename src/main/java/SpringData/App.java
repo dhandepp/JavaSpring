@@ -7,12 +7,17 @@ public class App {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
-        TraditionalPGRepo repo = new TraditionalPGRepo();
+    //    TraditionalPGRepo repo = new TraditionalPGRepo();
      //   repo.list().forEach(System.out::println);
 
         SpringPGRepo springRepo = context.getBean("springPGRepo",SpringPGRepo.class);
       //  springRepo.list().forEach(System.out::println);
        // System.out.println(springRepo.employeeCount());
-        System.out.println(springRepo.retrieve(2));
+      //  System.out.println(springRepo.retrieve(2));
+        Employee employee = new Employee();
+        employee.setName("Scott");
+        employee.setPractice("CME");
+        employee.setProject("SNOW");
+        System.out.println(springRepo.create(employee));
     }
 }
