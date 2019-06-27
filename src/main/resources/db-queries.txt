@@ -1,0 +1,5 @@
+List Database- \list    \l
+Switch Database- \connect   \c
+
+
+List Tables- \dt

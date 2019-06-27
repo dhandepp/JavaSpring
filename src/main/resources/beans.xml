@@ -9,11 +9,13 @@
     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-<context:component-scan base-package="SpringCore"/>
+    <context:annotation-config/>
+    <context:component-scan base-package="SpringData"/>
+    <context:component-scan base-package="SpringCore"/>
     <context:component-scan base-package="SpringCore.aop"/>
 
-    <aop:aspectj-autoproxy />
-    <bean class="SpringCore.aop.HelloWorldAspect" />
+    <aop:aspectj-autoproxy/>
+    <bean class="SpringCore.aop.HelloWorldAspect"/>
 
     <bean id="helloWorld" class="SpringCore.HelloWorld">
     </bean>
@@ -21,5 +23,14 @@
     <bean id="helloStaticClass" class="SpringCore.HelloStaticClass" factory-method="createInstance">
     </bean>
 
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost/ei"/>
+        <property name="username" value="postgres" />
+        <property name="password" value="root" />
+    </bean>
+
+    <bean id="springPGRepo" class="SpringData.SpringPGRepo">
+    </bean>
 
 </beans>
