@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -52,6 +53,12 @@ public class SpringPGRepo {
         SqlParameterSource source = new MapSqlParameterSource("name",employee.getName())
                 .addValue("project",employee.getProject())
                 .addValue("practice",employee.getPractice());
+
+        try{}
+        catch (Exception ex){
+            // trigger rollback programmatically
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+        }
         return namedJdbcTemplate.update(query,source);
     }
 

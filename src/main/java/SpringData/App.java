@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("transactional-beans.xml");
 
     //    TraditionalPGRepo repo = new TraditionalPGRepo();
      //   repo.list().forEach(System.out::println);
@@ -15,9 +15,9 @@ public class App {
        // System.out.println(springRepo.employeeCount());
       //  System.out.println(springRepo.retrieve(2));
         Employee employee = new Employee();
-        employee.setName("Scott");
-        employee.setPractice("CME");
-        employee.setProject("SNOW");
+        employee.setName("CHei");
+        employee.setPractice("Gad");
+        employee.setProject("ASD");
         System.out.println(springRepo.create(employee));
     }
 }

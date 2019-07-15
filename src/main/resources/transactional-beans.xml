@@ -16,17 +16,6 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="SpringData"/>
-    <context:component-scan base-package="SpringCore"/>
-    <context:component-scan base-package="SpringCore.aop"/>
-
-    <aop:aspectj-autoproxy/>
-    <bean class="SpringCore.aop.HelloWorldAspect"/>
-
-    <bean id="helloWorld" class="SpringCore.HelloWorld">
-    </bean>
-
-    <bean id="helloStaticClass" class="SpringCore.HelloStaticClass" factory-method="createInstance">
-    </bean>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
@@ -38,12 +27,39 @@
     <bean id="springPGRepo" class="SpringData.SpringPGRepo">
     </bean>
 
-    <!--
-    Spring's internal class, forcing it to use our datasource, also available for NamedParameterJDbcSupport etc
-    -->
-    <bean id="simpleJdbcDaoSupport" class="org.core.SimpleJdbcDaoSupport">
-        <property name="dataSource" ref="dataSource" />
+
+<!--
+ The <tx:advice/> definition reads as “all methods, on starting with get,
+ are to execute in the context of a read-only transaction, and all other
+ methods are to execute with the default transaction semantics”.
+ The transaction-manager attribute of the <tx:advice/> tag is set to the
+ name of the PlatformTransactionManager bean that is going to drive the
+ transactions (in this case, the txManager bean).
+ -->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true"  no-rollback-for="InstrumentNotFoundException" rollback-for="Throwable"/>
+            <tx:method name="*" />
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- ensure that the above transactional advice runs for any execution
+        of an operation defined by the SpringPGRepo class -->
+    <aop:config>
+        <aop:pointcut id="empService" expression="execution(* SpringData.SpringPGRepo.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="empService"/>
+    </aop:config>
+
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
+    <!--
+    @Transaction could be class level or method level
+    @EnableTransactionManagement should be given in @Configuration class or
+     <tx:annotation-driven transaction-manager="txManager"/>
+
+     @TODO Transactional Propagation
+    -->
 
 </beans>

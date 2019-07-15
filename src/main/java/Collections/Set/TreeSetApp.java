@@ -15,9 +15,11 @@ public class TreeSetApp {
     }
 
     public static void main(String[] args) {
+
+
         TreeSet<Person> tSet = new TreeSet<>();
-        tSet.add(new Person(1));
         tSet.add(new Person(2));
+        tSet.add(new Person(1));
 
         tSet.forEach(p -> System.out.println(p.id));
 
